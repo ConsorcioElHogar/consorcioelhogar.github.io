@@ -1,0 +1,81 @@
+<!doctype html>
+<p style="color:var(--muted);font-size:14px">Déjanos tus datos y te contactamos con un presupuesto estimado.</p>
+<form id="contacto-form" class="contact" onsubmit="event.preventDefault(); enviar();">
+<label style="font-size:13px;color:var(--muted)">Nombre</label>
+<input id="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;margin-bottom:10px" />
+<label style="font-size:13px;color:var(--muted)">Teléfono / WhatsApp</label>
+<input id="phone" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;margin-bottom:10px" />
+<label style="font-size:13px;color:var(--muted)">Mensaje</label>
+<textarea id="msg" rows="3" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px"></textarea>
+<button class="btn-primary" style="width:100%;margin-top:12px" type="submit">Enviar</button>
+</form>
+<script>
+function enviar(){
+const n=document.getElementById('name').value.trim();
+const p=document.getElementById('phone').value.trim();
+const m=document.getElementById('msg').value.trim();
+if(!n||!p){alert('Por favor complete nombre y teléfono.');return}
+const mailto = `mailto:contacto@agelhogar.com?subject=Cotizacion%20-%20${encodeURIComponent(n)}&body=${encodeURIComponent('Nombre: '+n+'%0ATeléfono: '+p+'%0A%0AMensaje:%0A'+m)}`;
+window.location.href = mailto;
+}
+</script>
+</aside>
+</section>
+
+
+<section id="servicios" class="card" style="margin:18px 28px;border-radius:12px">
+<h2>Servicios</h2>
+<div class="services">
+<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+<strong>Adoquinado residencial</strong>
+<div style="color:var(--muted);font-size:13px;margin-top:6px">Colocación, nivelación y sellado para entradas y jardines.</div>
+</div>
+<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+<strong>Pavimentación ligera</strong>
+<div style="color:var(--muted);font-size:13px;margin-top:6px">Mejoras en vías internas y áreas de parqueo.</div>
+</div>
+<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+<strong>Mantenimiento</strong>
+<div style="color:var(--muted);font-size:13px;margin-top:6px">Reparación de piezas, reposición y limpieza técnica.</div>
+</div>
+<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+<strong>Asesoría técnica</strong>
+<div style="color:var(--muted);font-size:13px;margin-top:6px">Recomendaciones según uso y presupuesto.</div>
+</div>
+</div>
+</section>
+
+
+<section id="proyectos" style="padding:18px 28px">
+<h2>Proyectos recientes</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:12px">
+<div class="card">
+<div style="height:120px;background:linear-gradient(90deg,#e8f7ee,#f0f8ff);border-radius:8px"></div>
+<strong style="display:block;margin-top:10px">Entrada familiar - Quito</strong>
+<div style="color:var(--muted);font-size:13px">Adoquinado + bordillos, 80 m².</div>
+</div>
+<div class="card">
+<div style="height:120px;background:linear-gradient(90deg,#fff6e6,#f0f8ff);border-radius:8px"></div>
+<strong style="display:block;margin-top:10px">Patio comunitario - Guayaquil</strong>
+<div style="color:var(--muted);font-size:13px">Rehabilitación y nivelación.</div>
+</div>
+</div>
+</section>
+
+
+<section id="contacto" class="card" style="margin:18px 28px">
+<h2>Contacto</h2>
+<p style="color:var(--muted)">Teléfono/WhatsApp: <strong>+593 9XX XXX XXX</strong> · Email: <strong>contacto@agelhogar.com</strong></p>
+<p style="color:var(--muted);font-size:13px">Puedes personalizar estos datos editando el archivo index.html antes de subirlo a GitHub.</p>
+</section>
+
+
+</main>
+
+
+<footer>
+<div>© <strong>Consorcio AG El Hogar</strong> · Todos los derechos reservados</div>
+<div style="font-size:13px;color:var(--muted)">Hecho con ❤️ · Adoquines</div>
+</footer>
+</body>
+</html>
