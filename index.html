@@ -1,81 +1,127 @@
 <!doctype html>
-<p style="color:var(--muted);font-size:14px">Déjanos tus datos y te contactamos con un presupuesto estimado.</p>
-<form id="contacto-form" class="contact" onsubmit="event.preventDefault(); enviar();">
-<label style="font-size:13px;color:var(--muted)">Nombre</label>
-<input id="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;margin-bottom:10px" />
-<label style="font-size:13px;color:var(--muted)">Teléfono / WhatsApp</label>
-<input id="phone" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;margin-bottom:10px" />
-<label style="font-size:13px;color:var(--muted)">Mensaje</label>
-<textarea id="msg" rows="3" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px"></textarea>
-<button class="btn-primary" style="width:100%;margin-top:12px" type="submit">Enviar</button>
-</form>
-<script>
-function enviar(){
-const n=document.getElementById('name').value.trim();
-const p=document.getElementById('phone').value.trim();
-const m=document.getElementById('msg').value.trim();
-if(!n||!p){alert('Por favor complete nombre y teléfono.');return}
-const mailto = `mailto:contacto@agelhogar.com?subject=Cotizacion%20-%20${encodeURIComponent(n)}&body=${encodeURIComponent('Nombre: '+n+'%0ATeléfono: '+p+'%0A%0AMensaje:%0A'+m)}`;
-window.location.href = mailto;
-}
-</script>
-</aside>
-</section>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consorcio AG El Hogar - Adoquinado</title>
+  <meta name="description" content="Consorcio AG El Hogar - Servicios de adoquinado, pavimentos y obras pequeñas. Profesional, rápido y confiable." />
+  <style>
+    :root{--bg:#f6fbff;--accent:#0b72b9;--accent2:#22a55f;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,var(--bg),#ffffff); color:#0f172a}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:transparent;box-shadow:0 6px 18px rgba(11,114,185,0.12)}
+    .logo svg{width:34px;height:34px}
+    h1{font-size:28px;margin:0}
+    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-weight:600}
 
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:46px 28px}
+    .hero .content{max-width:720px}
+    .eyebrow{display:inline-block;background:rgba(34,165,95,0.12);color:var(--accent2);padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+    .lead{font-size:20px;color:#04203b;margin-top:12px;line-height:1.35}
+    .cta-row{margin-top:18px;display:flex;gap:12px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#0867a8);color:white;padding:12px 18px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-secondary{background:transparent;border:2px solid #e6eef8;color:var(--accent);padding:10px 14px;border-radius:10px;cursor:pointer;text-align:center;text-decoration:none;display:inline-block}
 
-<section id="servicios" class="card" style="margin:18px 28px;border-radius:12px">
-<h2>Servicios</h2>
-<div class="services">
-<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
-<strong>Adoquinado residencial</strong>
-<div style="color:var(--muted);font-size:13px;margin-top:6px">Colocación, nivelación y sellado para entradas y jardines.</div>
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .stats{display:flex;gap:12px;margin-top:16px}
+    .stat{flex:1;text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;padding:18px}
+
+    .contact{padding:18px}
+    footer{padding:20px 28px;border-top:1px solid #eef2f7;margin-top:28px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;padding:28px}
+      .hero .content{order:2}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">
+  <img src="logo.png" alt="Consorcio AG El Hogar" style="width:150%;height:150%;border-radius:10px;object-fit:contain">
 </div>
-<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
-<strong>Pavimentación ligera</strong>
-<div style="color:var(--muted);font-size:13px;margin-top:6px">Mejoras en vías internas y áreas de parqueo.</div>
-</div>
-<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
-<strong>Mantenimiento</strong>
-<div style="color:var(--muted);font-size:13px;margin-top:6px">Reparación de piezas, reposición y limpieza técnica.</div>
-</div>
-<div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
-<strong>Asesoría técnica</strong>
-<div style="color:var(--muted);font-size:13px;margin-top:6px">Recomendaciones según uso y presupuesto.</div>
-</div>
-</div>
-</section>
+      <div>
+        <div style="font-weight:800"><span style="color:var(--accent)">Consorcio AG</span> El Hogar</div>
+        <div style="font-size:12px;color:var(--muted)">Adoquinado • Pavimentación • Mantenimiento</div>
+      </div>
+    </div>
+    <nav class="card" style="display:flex;align-items:center">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="content">
+        <span class="eyebrow">Profesionales en adoquinado</span>
+        <h1 style="font-size:40px;margin-top:18px">Logra el mejor acabado para tu hogar y obra</h1>
+        <p class="lead">Realizamos trabajos de adoquinado, pavimentación y mantenimiento con materiales de calidad, garantizando durabilidad y estética. Cotiza hoy y recibe asesoría técnica sin compromiso.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="#contacto">Solicitar cotización</a>
+          <a class="btn-secondary" href="#proyectos">Ver proyectos</a>
+        </div>
+      </div>
 
-<section id="proyectos" style="padding:18px 28px">
-<h2>Proyectos recientes</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:12px">
-<div class="card">
-<div style="height:120px;background:linear-gradient(90deg,#e8f7ee,#f0f8ff);border-radius:8px"></div>
-<strong style="display:block;margin-top:10px">Entrada familiar - Quito</strong>
-<div style="color:var(--muted);font-size:13px">Adoquinado + bordillos, 80 m².</div>
-</div>
-<div class="card">
-<div style="height:120px;background:linear-gradient(90deg,#fff6e6,#f0f8ff);border-radius:8px"></div>
-<strong style="display:block;margin-top:10px">Patio comunitario - Guayaquil</strong>
-<div style="color:var(--muted);font-size:13px">Rehabilitación y nivelación.</div>
-</div>
-</div>
-</section>
+      <aside class="card">
+        <!-- Título para opciones de contacto -->
+        <h3 style="margin-bottom:12px">Escoja cómo desea contactarnos:</h3>
 
+        <!-- Formulario directo al correo -->
+        <form action="https://formsubmit.co/consorcioag.hogar@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Tu nombre" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;margin-bottom:10px">
+          <input type="email" name="email" placeholder="Tu correo" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px;margin-bottom:10px">
+          <textarea name="message" rows="3" placeholder="Escribe tu mensaje" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px"></textarea>
+          <button class="btn-primary" style="width:100%;margin-top:12px" type="submit">Enviar</button>
+        </form>
 
-<section id="contacto" class="card" style="margin:18px 28px">
-<h2>Contacto</h2>
-<p style="color:var(--muted)">Teléfono/WhatsApp: <strong>+593 991 668 414</strong> · Email: <strong>consorcioag.hogar@gmail.com</strong></p>
-<p style="color:var(--muted);font-size:13px">Puedes personalizar estos datos editando el archivo index.html antes de subirlo a GitHub.</p>
-</section>
+        <!-- Botón para WhatsApp -->
+        <a href="https://wa.me/593991668414" target="_blank" class="btn-secondary" style="display:block;text-align:center;margin-top:12px;padding:10px 0;border-radius:10px;text-decoration:none">
+          Enviar mensaje por WhatsApp
+        </a>
+      </aside>
+    </section>
 
+    <section id="servicios" class="card" style="margin:18px 28px;border-radius:12px">
+      <h2>Servicios</h2>
+      <div class="services">
+        <div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+          <strong>Adoquinado residencial</strong>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Colocación, nivelación y sellado para entradas y jardines.</div>
+        </div>
+        <div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+          <strong>Pavimentación ligera</strong>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Mejoras en vías internas y áreas de parqueo.</div>
+        </div>
+        <div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+          <strong>Mantenimiento</strong>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Reparación de piezas, reposición y limpieza técnica.</div>
+        </div>
+        <div style="padding:12px;border-radius:10px;border:1px solid #eef6fb">
+          <strong>Asesoría técnica</strong>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Recomendaciones según uso y presupuesto.</div>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <section id="proyectos" style="margin:18px 28px">
+      <h2>Proyectos recientes</h2>
+      <p style="color:var(--muted)">Aquí puedes agregar fotos de tus trabajos recientes.</p>
+    </section>
+  </main>
 
-
-<footer>
-<div>© <strong>Consorcio AG El Hogar</strong> · Todos los derechos reservados</div>
-<div style="font-size:13px;color:var(--muted)">Hecho con ❤️ · Adoquinados</div>
-</footer>
+  <footer>
+    <div>© 2025 Consorcio AG El Hogar</div>
+    <div>
+      <a href="mailto:consorcioag.hogar@gmail.com" style="margin-right:12px;color:var(--accent);text-decoration:none">Email</a>
+      <a href="https://wa.me/593991668414" target="_blank" style="color:var(--accent);text-decoration:none">WhatsApp</a>
+    </div>
+  </footer>
 </body>
 </html>
